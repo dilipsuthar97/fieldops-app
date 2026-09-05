@@ -1,19 +1,11 @@
-import { StyleSheet, Text, View } from "react-native";
+import { View } from "react-native";
+import { Button, Text } from "react-native-fieldops-ui";
 
 export default function Index() {
   return (
-    <View style={styles.container}>
-      <Text className="text-green-700">
-        Edit src/app/index.tsx to edit this screen.
-      </Text>
+    <View className="flex-1 p-4 bg-surface">
+      <Text>Edit src/app/index.tsx to edit this screen.</Text>
+      <Button label="Button" onPress={() => alert("Hello")} />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
