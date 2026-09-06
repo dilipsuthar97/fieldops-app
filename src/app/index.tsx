@@ -41,6 +41,7 @@ const WorkOrdersScreen = () => {
     hasNextPage,
     fetchNextPage,
     refetch,
+    refreshFirstPage,
   } = useWorkOrders({ status, q: debouncedSearch });
 
   // state
@@ -61,11 +62,11 @@ const WorkOrdersScreen = () => {
   const handleRefresh = useCallback(async () => {
     setRefreshing(true);
     try {
-      await refetch();
+      await refreshFirstPage();
     } finally {
       setRefreshing(false);
     }
-  }, [refetch]);
+  }, [refreshFirstPage]);
 
   const handleEndReached = useCallback(() => {
     // guard against FlatList firing repeatedly
