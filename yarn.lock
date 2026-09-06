@@ -3812,8 +3812,10 @@ react-native-drawer-layout@^4.2.2:
     color "^4.2.3"
     use-latest-callback "^0.2.4"
 
-"react-native-fieldops-ui@file:.yalc/react-native-fieldops-ui":
-  version "0.1.1"
+react-native-fieldops-ui@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/react-native-fieldops-ui/-/react-native-fieldops-ui-0.1.4.tgz#cc08f06a56c064e0e55f11a07e8c91793a4cc240"
+  integrity sha512-kGXUkukuFauvjkFLnfM6Pq4PwbX3i0ubrEOcJWHUIHnAH6QAWOmFOfF7faS2V8odnczG5xHKW1DZaFd+pWGggA==
   dependencies:
     class-variance-authority "^0.7.1"
     clsx "^2.1.1"
