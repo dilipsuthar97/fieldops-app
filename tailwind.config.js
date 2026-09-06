@@ -9,8 +9,9 @@ const fieldopsUi = path.dirname(
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
-    // "./node_modules/react-native-fieldops-ui/lib/module/**/*.{js,jsx,ts,tsx}", // load react-native-fieldops-ui libraries component
-    `${fieldopsUi}/lib/**/*.{js,jsx,ts,tsx}`,
+    // library's own components carry preset classes, so they have to be scanned too
+    `${fieldopsUi}/src/**/*.{js,jsx,ts,tsx}`, // load react-native-fieldops-ui libraries component
+    `${fieldopsUi}/lib/**/*.{js,jsx,ts,tsx}`, // load react-native-fieldops-ui libraries component
   ],
   presets: [
     require("nativewind/preset"),
