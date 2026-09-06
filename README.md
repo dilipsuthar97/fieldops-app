@@ -2,6 +2,12 @@
 
 An Expo (SDK 57) app that lists work orders.
 
+The UI components and the Tailwind preset both come from
+[`react-native-fieldops-ui`](https://www.npmjs.com/package/react-native-fieldops-ui), a
+companion library published to npm and installed here as an ordinary dependency —
+`tailwind.config.js` registers its preset and scans its files. There is no link step;
+`yarn install` is all it takes.
+
 ## Running it from a clean clone
 
 You need Node 20.19+ (or 22.12+), Yarn 1.x (the repo ships a `yarn.lock`; npm works too), and
