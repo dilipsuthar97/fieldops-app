@@ -1,56 +1,36 @@
-# Welcome to your Expo app 👋
+# FieldOps
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+An Expo (SDK 57) app that lists work orders.
 
-## Get started
+## Running it from a clean clone
 
-1. Install dependencies
+You need Node 20.19+ (or 22.12+), Yarn 1.x (the repo ships a `yarn.lock`; npm works too), and
+one of: Xcode for the iOS Simulator, Android Studio for an Android emulator, or Expo Go on a
+phone.
 
-   ```bash
-   npm install
-   ```
+### 1. Install dependencies
 
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```sh
+yarn install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Start the API
 
-### Other setup steps
+The app has no bundled backend. Run the provided `server.js`, from wherever it lives, and
+leave it running on port **4000**:
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+```sh
+node server.js
+```
 
-## Learn more
+### 3. Start the app
 
-To learn more about developing your project with Expo, look at the following resources:
+```sh
+yarn ios       # iOS Simulator
+yarn android   # Android emulator
+yarn start     # dev server + QR code for Expo Go
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+The simulator and emulator work as-is. On a physical phone, `localhost` is the phone itself,
+so open [src/api/client.ts](src/api/client.ts#L25) and change the `default` base URL to your
+machine's LAN IP (e.g. `http://192.168.1.20:4000`), with the phone on the same network.
